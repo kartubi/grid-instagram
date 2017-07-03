@@ -64,9 +64,10 @@ public class PicsAdapter extends RecyclerView.Adapter<PicsAdapter.PicsViewHolder
                 .centerCrop()
                 .into(holder.ivPics);
 
-        String a = picsActivity.getheigth();
-        int b = Integer.valueOf(a);
-        holder.ivPics.getLayoutParams().height = b/3;
+
+        int screenHeight= Integer.valueOf(picsActivity.getHeight());
+
+        holder.ivPics.getLayoutParams().height = screenHeight/3;
         holder.pics_item_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

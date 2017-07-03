@@ -29,8 +29,8 @@ import java.util.List;
 public class PicsActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
 
     private static final String TAG = PicsActivity.class.getSimpleName();
-    String c, d;
-    ImageView ivpics;
+    String screenHeight, screenWidth;
+    ImageView ivPics;
     SwipeRefreshLayout srlPics;
 
     @Override
@@ -40,7 +40,7 @@ public class PicsActivity extends AppCompatActivity implements SwipeRefreshLayou
 
         getALLPics();
 
-        ivpics = (ImageView)findViewById(R.id.ivPics);
+        ivPics = (ImageView)findViewById(R.id.ivPics);
         srlPics = (SwipeRefreshLayout)findViewById(R.id.srfPics);
 
         Display display = getWindowManager().getDefaultDisplay();
@@ -49,12 +49,9 @@ public class PicsActivity extends AppCompatActivity implements SwipeRefreshLayou
         int width = size.x;
         int height = size.y;
 
-        c = String.valueOf(width);
-        d = String.valueOf(height);
+        screenWidth = String.valueOf(width);
+        screenHeight = String.valueOf(height);
 
-
-        Log.d(TAG, "width : " + c);
-        Log.d(TAG, "heigth : " + d);
 
         srlPics.setOnRefreshListener(this);
         srlPics.post(new Runnable() {
@@ -101,8 +98,8 @@ public class PicsActivity extends AppCompatActivity implements SwipeRefreshLayou
                 });
     }
 
-    public String getheigth(){
-        return c;
+    public String getHeight(){
+        return screenWidth;
     }
 
 
